@@ -1,7 +1,9 @@
 ---
-- hosts: Raspberrypi
-  become: true
+- name: Ping des Raspberry Pi
+  hosts: rpis
+  gather_facts: no
+
   tasks:
-    - name: Print OS info
-      ansible.builtin.package:
-        name: raspberry
+    - name: Ping simple
+      ansible.builtin.ping:
+
